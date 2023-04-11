@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Clase 5</h1>
+    <section id ="dolares y pesos">
+        <form action="#">
+            <h2>Pesos a Dolares</h2>
+            <label for="dolares">Dolares</label>
+            <input type="text" id ="dolares" placeholder="Valor en Dolares">
+            <br>
+            <label for="pesos">Pesos</label>
+            <input type="text" id="pesos" placeholder="Valor en pesos">
+            <br>
+            <button onclick="obtenerDolares()">Enviar</button>
+        </form>
+        <hr>
+        <form action="#">
+            <h2>Dolares a Pesos</h2>
+            <label for="pesos2">Pesos</label>
+            <input type="text" id ="pesos2" placeholder="Valor en Pesos">
+            <br>
+            <label for="dolares2">Dolares</label>
+            <input type="text" id="dolares2" placeholder="Valor en Dolares">
+            <br>
+            <button onclick="obtenerPesos()">Enviar</button>
+        </form>
+    </section>
+    <hr>
+    <section id="Temperatura">
+        <h2>Conversor de Grados Centigrados a Grados Fahrenheit</h2>
+        <label for="">Grados Centigrados:</label>
+        <input type="text" id="centigrados" placeholder="Ingrese aqui el valor en °C"><button onclick="convertir()">Convertir</button>
+        <p id="far"></p>
+    </section>
+    <hr>
+    <section id="Caja">
+        <form action="#">
+            <h2>Formulario para solicitar una Caja</h2>
+            <label for="nombre">Nombre del Cliente:</label><br>
+            <input type="text" id ="nombre" placeholder="Ingrese su nombre aqui"><br>
+            <label for="opciones">Materia de la Caja:</label>
+            <select name="opciones" id="opciones">
+                <option value="opcion1">Madera</option>
+                <option value="opcion2">Carton</option>
+                <option value="opcion3">Cristal</option>
+            </select>
+            <br>
+            <br>
+            <label for="tamanio">Seleccione una dimension para la caja:</label><br>
+            <input type="radio" id ="diminuta" value="Diminuta"  name = "tamanio" checked>
+            <label for="">Diminuta</label><br>
+            <input type="radio" id="mediana" value="Mediana" name = "tamanio" >
+            <label for="">Mediana</label><br>
+            <input type="radio" id="grande" value="Grande" name = "tamanio" >
+            <label for="">Grande</label><br>
+            <label for="descripcion">Comentarios</label><br>
+            <textarea name="descripcion" id="descripcion" cols="20" rows="3" resize = "none"></textarea><br>
+            <button onclick="enviarMensaje()">Enviar</button>
+            <input type="text" id="mensaje" style="width: 700px;">
+        </form>
+    </section>
+    <hr>
+    <section >
+        <h2>Numero Secreto</h2>
+        <form action="#" id="nroSecreto">
+            <label for="nro" >Intruduzca un numero entre el 0 y 5:</label><br hidden class ="oculto">
+            <label for="nro" class ="oculto" style = "color: red;" hidden>Error!Ingrese otro numero!!</label><br>
+            <input type="text" id="nro">
+            <button onclick="adivinarNro()">Enviar</button>
+            <label for="" id="cantintentos">Intentos : 0</label> <br>
+            <p id="resultado"></p>
+            
+        </form>
+    </section>
+    <hr>
+    <section>
+        <label for="nombrePersona">Ingrese un nombre a la lista:</label>
+        <input type="text" id="nombrePersona" placeholder="Ingrese el nombre aqui">
+        <button onclick="agregarNombre()">Enviar</button>
+        <h2>Lista de nombres</h2>
+        <ul id="listaNombresPersona">
+            <li>Dario</li>
+        </ul>
+    </section>
+    <script src="clase5.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.prueba h2 + p{
+    color: red;
+}
+
+#lista{
+    color:green;
+    background-color: aqua;
+} 
+
+#parrafito{
+    border: 3px solid red;
+   color: green;
+   margin-left: 200px;
+   margin-right: 200px;
+   padding: 150px;
+   box-sizing: content-box;
+   background-image: url(IMG/zambita.jpg);
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+.contenedor{
+    width: 100%;
+    height: 700px;
+    display: flex;
+   flex-flow: row wrap;
+   justify-content: space-evenly;
+   
+   align-items: stretch
+    
+}
+.elemento{
+    width: 25%;
+    border: 1px solid black;
+    width: 150px;
+    height: 100px;
+    background-color: aqua;
+    
+}

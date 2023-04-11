@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.prueba h2 + p{
+    color: red;
+}
+
+#lista{
+    color:green;
+    background-color: aqua;
+} 
+
+#parrafito{
+    border: 3px solid red;
+   color: green;
+   margin-left: 200px;
+   margin-right: 200px;
+   padding: 150px;
+   box-sizing: content-box;
+   background-image: url();
+   
+
+}
