@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#navegacion li{
+    text-decoration: none;
+    display: inline-block;
+    text-align: right;
+    border: 1px solid black;
+
+}
+
+#navegacion{
+    border: 1px solid black;
+}
+
+#principal{
+    background-image: url("IMG/banner-principal.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#desarrollo{
+    background-image: url("IMG/banner-secundario.jpg");
+
+}

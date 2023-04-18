@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.miestilo { 
+    background-color: green;
+   }
+   @media (max-width: 767.98px) { 
+    .miestilo { 
+    background-color: red; 
+    }
+    } 
+    @media(min-width: 1000px){
+        .miestilo{
+        background-color: yellow;
+    }
+    
+    }
+  
+   
