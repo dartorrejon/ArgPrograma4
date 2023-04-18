@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1>Clase10</h1>
+    <div id="nrosOrdenados"></div>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, ullam asperiores aut, possimus magnam nisi placeat dignissimos voluptates, commodi sed omnis natus cumque eius tempora laborum labore adipisci voluptatum nobis?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, enim labore. Quasi tempore architecto ab amet, debitis corrupti, maiores dolore inventore quas iste dignissimos ducimus. Animi sed officia architecto! Harum?</p>
 
@@ -144,6 +145,67 @@
             <th>Elemento4</th>
         </tr>
     </table>
+    <hr>
+    <h3>Div Redimensionable(doble click)</h3>
+    <div id="redimension"></div>
+    <style>
+        #redimension{
+            border: 1px solid black;
+            width: 800px;
+            height: 70px;
+        }
+        #redimension.cambiar{
+            width: 250px;
+            height: 250px;
+        }
+    </style>
+    <hr>
+    <h3>Conjunto de Parrafos</h3>
+    <div id="parrafos">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non laudantium porro magni natus modi perferendis, blanditiis vero voluptatem cumque repellat obcaecati dolor quos nostrum, alias tenetur autem vitae assumenda id.
+        Dolores magnam eveniet molestiae doloribus iure fugit vero ipsam. Reiciendis quam error, iure quaerat quas est maiores at excepturi vel officiis, accusantium culpa fugiat dolorem animi ad omnis. Sequi, saepe!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non laudantium porro magni natus modi perferendis, blanditiis vero voluptatem cumque repellat obcaecati dolor quos nostrum, alias tenetur autem vitae assumenda id.
+        Dolores magnam eveniet molestiae doloribus iure fugit vero ipsam. Reiciendis quam error, iure quaerat quas est maiores at excepturi vel officiis, accusantium culpa fugiat dolorem animi ad omnis. Sequi, saepe!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non laudantium porro magni natus modi perferendis, blanditiis vero voluptatem cumque repellat obcaecati dolor quos nostrum, alias tenetur autem vitae assumenda id.
+        Dolores magnam eveniet molestiae doloribus iure fugit vero ipsam. Reiciendis quam error, iure quaerat quas est maiores at excepturi vel officiis, accusantium culpa fugiat dolorem animi ad omnis. Sequi, saepe!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non laudantium porro magni natus modi perferendis, blanditiis vero voluptatem cumque repellat obcaecati dolor quos nostrum, alias tenetur autem vitae assumenda id.
+        Dolores magnam eveniet molestiae doloribus iure fugit vero ipsam. Reiciendis quam error, iure quaerat quas est maiores at excepturi vel officiis, accusantium culpa fugiat dolorem animi ad omnis. Sequi, saepe!</p>
+    </div>
+    <div id="parrafos2" hidden>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non laudantium porro magni natus modi perferendis, blanditiis vero voluptatem cumque repellat obcaecati dolor quos nostrum, alias tenetur autem vitae assumenda id.
+        Dolores magnam eveniet molestiae doloribus iure fugit vero ipsam. Reiciendis quam error, iure quaerat quas est maiores at excepturi vel officiis, accusantium culpa fugiat dolorem animi ad omnis. Sequi, saepe!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non laudantium porro magni natus modi perferendis, blanditiis vero voluptatem cumque repellat obcaecati dolor quos nostrum, alias tenetur autem vitae assumenda id.
+        Dolores magnam eveniet molestiae doloribus iure fugit vero ipsam. Reiciendis quam error, iure quaerat quas est maiores at excepturi vel officiis, accusantium culpa fugiat dolorem animi ad omnis. Sequi, saepe!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non laudantium porro magni natus modi perferendis, blanditiis vero voluptatem cumque repellat obcaecati dolor quos nostrum, alias tenetur autem vitae assumenda id.
+        Dolores magnam eveniet molestiae doloribus iure fugit vero ipsam. Reiciendis quam error, iure quaerat quas est maiores at excepturi vel officiis, accusantium culpa fugiat dolorem animi ad omnis. Sequi, saepe!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non laudantium porro magni natus modi perferendis, blanditiis vero voluptatem cumque repellat obcaecati dolor quos nostrum, alias tenetur autem vitae assumenda id.
+        Dolores magnam eveniet molestiae doloribus iure fugit vero ipsam. Reiciendis quam error, iure quaerat quas est maiores at excepturi vel officiis, accusantium culpa fugiat dolorem animi ad omnis. Sequi, saepe!</p>
+    </div>
+    <hr>
+    <h3>Seccion Select</h3>
+    <select name="equipos" id="equipos">
+        <option value="river">River</option>
+        <option value="boca">Boca</option>
+        <option value="racing">Racing</option>
+        <option value="independiente">Independiente</option>
+    </select>
+    <hr>
+    <h3>Link Truncado</h3>
+    <a href="https://www.google.com.ar" id="truncado">Mirar en la consola</a>
+    <hr>
+    <h3>Formulario</h3>
+    <form action="" id="formTruncado">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre">
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido">
+        <label for="direccion">Direccion</label>
+        <input type="text" id="direccion">
+        <label for="correo">Email</label>
+        <input type="text" id="correo">
+        <input type="submit" id="envio">
+    </form>
+
     <script src="avanzado.js"></script>
 </body>
 </html>

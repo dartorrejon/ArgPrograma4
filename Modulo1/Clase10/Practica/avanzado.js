@@ -2,14 +2,14 @@
 // 1. Genera un array de números aleatorios, ordenarlos y mostrarlo en una lista
 // desordenada. Tiene que crear la lista uno mismo.
 let nums = Array(10);
-let body = document.querySelector("body");
+let lisNums = document.querySelector("#nrosOrdenados");
 for(i=0;i<nums.length;i++){
     nums[i]=(Math.floor(Math.random()*50))+1;
 }
 nums.sort((a,b) => a-b)
 let lista = document.createElement("ul");
 
-body.appendChild(lista);
+lisNums.appendChild(lista);
 for(i=0;i<nums.length;i++){
     let valor = document.createElement("li");
     valor.innerText = nums[i];
@@ -311,6 +311,48 @@ $(document).ready(function(){
     $("#tablaFocus2 tr th").mouseout(function(){
         $(this).css("background-color","initial");
         console.log("out");
+    })
+
+    //     20. Disponer un div de 800 x 70 píxeles. Al hacer doble clic redimensionarlo a 250 x 250
+    // píxeles y si se hace doble clic nuevamente retornar al tamaño 800 x 70.
+    let div = document.querySelector("#redimension");
+    $(div).dblclick(function(){
+        $(this).toggleClass("cambiar");
+    })
+
+    //     21. Confeccionar una página que contenga un div con un conjunto de párrafos. Cuando se
+    // presione con el mouse dentro del div ocultarlo lentamente y cuando esté
+    // completamente oculto hacer que aparezca lentamente otro bloque de texto
+    $("#parrafos").click(function(){
+        $(this).fadeOut(2000);
+        setTimeout(() => {$("#parrafos2").fadeIn(2000);},1000);
+    })
+
+
+    //     22. Mostrar con console.log el valor de un option cada vez que un usuario seleccione un
+    // option nuevo de un elemento select.
+
+   $("#equipos").change(function(){
+        console.log($(this).find("option:selected").text());
+   })
+
+
+//    23. Hacer que un link no salga de la página al hacer click, pero mostrar el valor de la página
+// referida con console.log
+   $("#truncado").click(function(event){
+        event.preventDefault();
+        console.log($(this).attr("href"));
+   })
+
+
+    //    24. Hacer que un formulario no se envíe al hacer click en "enviar", en lugar de eso mostrar
+    // un texto en la página que el formulario fue enviado.
+    let p=document.createElement("p");
+    $(p).text("Formulario Enviado con Exito!");
+    $("#envio").click(function(event){
+        event.preventDefault();
+        //$("#formTruncado").appendChild(p);
+        $(p).insertAfter("#formTruncado");
     })
 })
 
