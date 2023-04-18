@@ -18,7 +18,7 @@ $(document).ready(function(){
         $(etiqueta2).text("Falta completar este campo.");
         $(etiqueta3).text("Falta completar este campo.");
         $(etiqueta4).text("Falta completar este campo.");
-        console.log(nombre)
+       
         if(nombre == ""){
             $(etiqueta1).insertAfter("#nombre");
         }else{
