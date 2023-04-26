@@ -12,7 +12,7 @@
 }
 
 #navegacion li{
-    margin-top: 20px;
+    margin-top: 18px;
     text-decoration: none;
     display: inline-block;
     text-align: center;
@@ -20,7 +20,7 @@
 }
 
 #logo{
-    margin-top: 22px;
+    margin-top: 20px;
     margin-bottom: 22px;
     height: 40px;
 }
@@ -31,12 +31,16 @@
     background-position: center;
     
 }
+#contPpal > section > p{
+    color: #E8E8E8;
+}
+
 #contPpal{
     height: 600px;
 }
 .par1{
     text-align: center;
-    color: white;
+    color: #E8E8E8;
 }
 
 #btnPpal{
@@ -51,11 +55,130 @@
 
 .botoncito{
     background-color:  #E21982;
-    color: white;
+    color: #E8E8E8;
     border: 1px solid  #E21982;
     border-radius: 20px;
     font-size: 16px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 700;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
     
+}
+#preguntasBox{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#preguntas{
+    background-color: #E8E8E8;
+}
+.divAyuda{
+    margin-top: 60px;
+}
+
+.ayudaB{
+    margin-bottom: 50px;
+}
+#preguntas > section > blockquote{
+    padding-top: 60px;
+}
+#pregunta1, #pregunta2, #pregunta3, #pregunta4, #pregunta5{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    border-radius: 5px;
+    padding-right: 10px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.imgPregunta{
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+  
+.preTitulo{
+    font-size: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    text-align: center;
+}
+
+.titulo{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    text-align: center;
+}
+
+#quienesSomos{
+    background-color:  #E8E8E8;
+}
+.qSomos{
+    height: 350px;
+}
+.texto{
+    text-align: center;
+}
+
+.tarjeta{
+    text-align: center;
+    height: 300px;
+}
+
+#medPpal{
+    background-color: #E21982;
+    width: 100%;
+}
+
+#medbtn {
+    border: 1px solid white;
+}
+
+#medio{
+    height: 120px;
+}
+
+.medAyuda{
+    font-size: 23px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    color: #E8E8E8;
+}
+
+.ayudaNum{
+    color: #E21982;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+}
+
+.dev{
+    height: 350px;
+}
+
+.titDesa{
+    color: #E8E8E8;
+}
+#pie{
+    background-color: #22193F;
+}
+
+.pieText, .copy{
+    text-align: center;
+    color: #E8E8E8;
+}
+
+.pieText{
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.copy{
+    margin-top: 5px;
+    font-size: 12px;
+    text-align: center;
+}
+hr{
+    color: #E8E8E8;
 }
