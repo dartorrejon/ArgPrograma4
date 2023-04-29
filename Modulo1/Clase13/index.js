@@ -22,46 +22,92 @@ function cargarFila(fila, columna1, columna2, columna3, columna4) {
   fila.appendChild(columna4);
 }
 
+//Funcion para poner la primera letra en mayuscula
+let capitalize = palabra => {
+  cad = "<span>";
+  cad += palabra.charAt(0).toUpperCase();
+  cad += palabra.slice(1) + ": ";
+  cad += "</span>";
+  return cad
+}
+
+//Funcion para saber el estado del personaje y asignarle un Visor 
+let estadoActual = (estado, etiqueta) => {
+  switch (estado) {
+    case 'Alive':
+      etiqueta.style.backgroundColor = "green";
+      etiqueta.style.border = "2px solid black";
+      break;
+    case 'Dead':
+      etiqueta.style.backgroundColor = "red";
+      etiqueta.style.border = "2px solid black";
+      break;
+    case 'unknown':
+      etiqueta.style.backgroundColor = "gray";
+      etiqueta.style.border = "2px solid black";
+      break;
+  }
+    etiqueta.style.display = "inline-block";
+    etiqueta.style.width = "14px";
+    etiqueta.style.height = "14px";
+    etiqueta.style.textAlign = "center";
+    etiqueta.style.marginLeft = "6px";
+    etiqueta.style.borderRadius = "10px";
+  return etiqueta;
+}
+
+
 let pag = 1;
 
 tabla = () => {
   fetch('https://rickandmortyapi.com/api/character/?page=' + pag).then(res => res.json()).then(data => {
     const personajes = Object.values(data.results); //Obtenemos todos los personajes de la pagina
+    const titulos = Object.keys(personajes[0]); //Obtenemos las keys para poner los nombres
     const pagActual = (data.info); //Nro de la Pagina actual
-    let pagina = document.querySelector('#nroPagina');
+    let pagina = document.querySelector('.nroPagina');
+    let pagina2 = document.querySelector('.nroPagina2');
     pagina.innerText = "Pagina N° " + pag;
+    pagina2.innerText = "Pagina N° " + pag;
 
     let nombre, estado, especie, genero, origen, locacion, foto;
     let cont = 1
     let tarjeta, col1, col2, col3, col4;
 
+    console.log(personajes)
+    console.log(titulos)
     //Recorremos el vector de personaje de cada pagina 
     for (let i = 0; i < personajes.length; i++) {
+
+      let estadoVisor = document.createElement('div');
+      estadoVisor.setAttribute("id","visor");
+
 
       //Obtenemos cada elemento necesario para la tarjeta desde la API
       foto = document.createElement('img'); //Agregamos la foto
       foto.src = personajes[i]['image']; //Referenciamos el src con la API
-      foto.setAttribute("alt",personajes[i]['name']);
-      foto.setAttribute("title",personajes[i]['name']);
+      foto.setAttribute("alt", personajes[i]['name']);
+      foto.setAttribute("title", personajes[i]['name']);
       nombre = document.createElement('blockquote');
-      nombre.innerText = personajes[i]['name'];
+      nombre.innerHTML = capitalize(titulos[1]) + personajes[i]['name'];
       estado = document.createElement('p');
-      estado.innerText = personajes[i]['status']
+      estado.setAttribute("id","estadoP")
+      estado.innerHTML = capitalize(titulos[2]) + personajes[i]['status'];
+      estado.appendChild(estadoActual(personajes[i]['status'], estadoVisor));
       especie = document.createElement('p');
-      especie.innerText = personajes[i]['species'];
+      especie.innerHTML = capitalize(titulos[3]) + personajes[i]['species'];
       genero = document.createElement('p');
-      genero.innerText = personajes[i]['gender'];
+      genero.innerHTML = capitalize(titulos[4]) + personajes[i]['gender'];
       origen = document.createElement('p');
-      origen.innerText = personajes[i]['origin']['name']
+      origen.innerHTML = capitalize(titulos[6]) + personajes[i]['origin']['name']
       locacion = document.createElement('p');
-      locacion.innerText = personajes[i]['location']['name']
+      locacion.innerHTML = capitalize(titulos[7]) + personajes[i]['location']['name']
 
       //Creamos cada tarjeta del personaje por cada columna(4 columnas por 5 filas = 20 personajes)
       switch (cont) {
         case 1:
           tarjeta = document.createElement('div');
-          tarjeta.setAttribute("class","tarjeta");
-          tarjeta.setAttribute("alt","personaje")
+          tarjeta.setAttribute("class", "tarjeta");
+          tarjeta.setAttribute("alt", "personaje")
           tarjeta.appendChild(foto);
           tarjeta.appendChild(nombre);
           tarjeta.appendChild(estado);
@@ -74,7 +120,7 @@ tabla = () => {
           break;
         case 2:
           tarjeta = document.createElement('div');
-          tarjeta.setAttribute("class","tarjeta");
+          tarjeta.setAttribute("class", "tarjeta");
           tarjeta.appendChild(foto);
           tarjeta.appendChild(nombre);
           tarjeta.appendChild(estado);
@@ -87,8 +133,8 @@ tabla = () => {
           break;
         case 3:
           tarjeta = document.createElement('div');
-          tarjeta.setAttribute("class","tarjeta");
-          tarjeta.setAttribute("alt","personaje");
+          tarjeta.setAttribute("class", "tarjeta");
+          tarjeta.setAttribute("alt", "personaje");
           tarjeta.appendChild(foto);
           tarjeta.appendChild(nombre);
           tarjeta.appendChild(estado);
@@ -101,8 +147,8 @@ tabla = () => {
           break;
         case 4:
           tarjeta = document.createElement('div');
-          tarjeta.setAttribute("class","tarjeta");
-          tarjeta.setAttribute("alt","personaje");
+          tarjeta.setAttribute("class", "tarjeta");
+          tarjeta.setAttribute("alt", "personaje");
           tarjeta.appendChild(foto);
           tarjeta.appendChild(nombre);
           tarjeta.appendChild(estado);
@@ -147,12 +193,19 @@ tabla = () => {
   })
 }
 
-let anterior = document.querySelector('#anterior');
-let siguiente = document.querySelector('#siguiente');
-let pagInicial = document.querySelector('#pag1');
-let pagFinal = document.querySelector('#pag42');
-let saltarPaginas = document.querySelector('#saltarPags');
-let volverPaginas = document.querySelector('#volverPags');
+let anterior = document.querySelector('.anterior');
+let siguiente = document.querySelector('.siguiente');
+let pagInicial = document.querySelector('.pag1');
+let pagFinal = document.querySelector('.pag42');
+let saltarPaginas = document.querySelector('.saltarPags');
+let volverPaginas = document.querySelector('.volverPags');
+
+let anterior2 = document.querySelector('.anterior2');
+let siguiente2 = document.querySelector('.siguiente2');
+let pagInicial2 = document.querySelector('.pag12');
+let pagFinal2 = document.querySelector('.pag422');
+let saltarPaginas2 = document.querySelector('.saltarPags2');
+let volverPaginas2 = document.querySelector('.volverPags2');
 
 
 //Funcion Boton Anterior
@@ -163,16 +216,24 @@ ant = () => {
     tabla()
   } else {
     anterior.setAttribute("hidden", true);
+    anterior2.setAttribute("hidden", true);
   }
 
-  if (pag < 42) siguiente.removeAttribute("hidden")
+  if (pag < 42) {
+    siguiente.removeAttribute("hidden");
+    siguiente2.removeAttribute("hidden");
+
+  }
   if (pag < 37) {
     saltarPaginas.innerText = "Volver a pagina " + (pag + 5);
+    saltarPaginas2.innerText = "Volver a pagina " + (pag + 5);
   } else {
     saltarPaginas.innerText = "Saltar a pagina..."
+    saltarPaginas2.innerText = "Saltar a pagina..."
   }
 
   volverPaginas.innerText = "volver a pagina " + (pag - 5);
+  volverPaginas2.innerText = "volver a pagina " + (pag - 5);
 }
 
 //Funcion boton siguiente
@@ -183,16 +244,23 @@ sig = () => {
     tabla()
   } else {
     siguiente.setAttribute("hidden", true);
+    siguiente2.setAttribute("hidden", true);
   }
 
-  if (pag > 1) anterior.removeAttribute("hidden");
+  if (pag > 1){
+    anterior.removeAttribute("hidden");
+    anterior2.removeAttribute("hidden");
+  } 
   if (pag > 5) {
     volverPaginas.innerText = "Volver a pagina " + (pag - 5);
+    volverPaginas2.innerText = "Volver a pagina " + (pag - 5);
   } else {
-    volverPaginas.innerText = "Volver a pagina..."
+    volverPaginas.innerText = "Volver a pagina...";
+    volverPaginas2.innerText = "Volver a pagina...";
   }
 
   saltarPaginas.innerText = "Saltar a pagina " + (pag + 5);
+  saltarPaginas2.innerText = "Saltar a pagina " + (pag + 5);
 
 }
 
@@ -202,9 +270,13 @@ pagina1 = () => {
   limpiarTabla()
   tabla();
   anterior.setAttribute("hidden", true);
+  anterior2.setAttribute("hidden", true);
   siguiente.removeAttribute("hidden");
+  siguiente2.removeAttribute("hidden");
   saltarPaginas.innerText = "Saltar a pagina " + (pag + 5);
+  saltarPaginas2.innerText = "Saltar a pagina " + (pag + 5);
   volverPaginas.innerHTML = "Volver a pagina... ";
+  volverPaginas2.innerHTML = "Volver a pagina... ";
 }
 
 //Funcion Boton pagina42
@@ -213,9 +285,13 @@ paginaFInal = () => {
   limpiarTabla()
   tabla();
   siguiente.setAttribute("hidden", true);
+  siguiente2.setAttribute("hidden", true);
   anterior.removeAttribute("hidden");
-  saltarPaginas.innerText = "Saltar a pagina..."
+  anterior2.removeAttribute("hidden");
+  saltarPaginas.innerText = "Saltar a pagina...";
+  saltarPaginas2.innerText = "Saltar a pagina...";
   volverPaginas.innerText = "Volver a pagina " + (pag - 5);
+  volverPaginas2.innerText = "Volver a pagina " + (pag - 5);
 
 }
 
@@ -225,19 +301,29 @@ adelantarPaginas = () => {
     pag += 5;
     limpiarTabla()
     tabla()
-    if (pag >= 42) { saltarPaginas.innerText = "Saltar a pagina..."; }
-    else { saltarPaginas.innerText = "Saltar a pagina " + (pag + 5); }
+    if (pag >= 42) {
+       saltarPaginas.innerText = "Saltar a pagina...";
+       saltarPaginas2.innerText = "Saltar a pagina...";
+       }else {
+        saltarPaginas.innerText = "Saltar a pagina " + (pag + 5);
+        saltarPaginas2.innerText = "Saltar a pagina " + (pag + 5);
+       }
     volverPaginas.innerText = "Volver a pagina " + (pag - 5);
+    volverPaginas2.innerText = "Volver a pagina " + (pag - 5);
   } else {
     pag = 42
     limpiarTabla()
     tabla()
     saltarPaginas.innerText = "Saltar a pagina...";
+    saltarPaginas2.innerText = "Saltar a pagina...";
     volverPaginas.innerText = "Volver a pagina " + (pag - 5);
-    siguiente.setAttribute("hidden",true);
-    
+    volverPaginas2.innerText = "Volver a pagina " + (pag - 5);
+    siguiente.setAttribute("hidden", true);
+    siguiente2.setAttribute("hidden", true);
+
   }
   anterior.removeAttribute("hidden");
+  anterior2.removeAttribute("hidden");
 }
 
 
@@ -255,9 +341,9 @@ volPaginas = () => {
     limpiarTabla()
     tabla()
     volverPaginas.innerText = "Volver a pagina..."
-    saltarPaginas.innerText = "Saltar a pagina " + (pag +5);
-    anterior.setAttribute("hidden",true);
-    
+    saltarPaginas.innerText = "Saltar a pagina " + (pag + 5);
+    anterior.setAttribute("hidden", true);
+
   }
   siguiente.removeAttribute("hidden");
 }
