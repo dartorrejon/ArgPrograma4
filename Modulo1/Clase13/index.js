@@ -64,8 +64,8 @@ tabla = () => {
     const personajes = Object.values(data.results); //Obtenemos todos los personajes de la pagina
     const titulos = Object.keys(personajes[0]); //Obtenemos las keys para poner los nombres
     const pagActual = (data.info); //Nro de la Pagina actual
-    let pagina = document.querySelector('.nroPagina');
-    let pagina2 = document.querySelector('.nroPagina2');
+    let pagina = document.querySelector('.nroPagina'); //pagina de parte sup
+    let pagina2 = document.querySelector('.nroPagina2');//pagina de parte inf
     pagina.innerText = "Pagina N° " + pag;
     pagina2.innerText = "Pagina N° " + pag;
 
@@ -73,11 +73,10 @@ tabla = () => {
     let cont = 1
     let tarjeta, col1, col2, col3, col4;
 
-    console.log(personajes)
-    console.log(titulos)
-    //Recorremos el vector de personaje de cada pagina 
+       //Recorremos el vector de personaje de cada pagina 
     for (let i = 0; i < personajes.length; i++) {
 
+      //Visor de estado actual del personaje
       let estadoVisor = document.createElement('div');
       estadoVisor.setAttribute("id","visor");
 
@@ -159,7 +158,6 @@ tabla = () => {
           col4 = document.createElement('td');
           col4.appendChild(tarjeta);
           break;
-
       }
 
       //Importante volver a 0 el contador cuando llega a 4
@@ -189,10 +187,10 @@ tabla = () => {
       }
       cont++;
     }
-
   })
 }
 
+//Botones de la parte superior
 let anterior = document.querySelector('.anterior');
 let siguiente = document.querySelector('.siguiente');
 let pagInicial = document.querySelector('.pag1');
@@ -200,6 +198,8 @@ let pagFinal = document.querySelector('.pag42');
 let saltarPaginas = document.querySelector('.saltarPags');
 let volverPaginas = document.querySelector('.volverPags');
 
+
+//Botones de la parte inferior
 let anterior2 = document.querySelector('.anterior2');
 let siguiente2 = document.querySelector('.siguiente2');
 let pagInicial2 = document.querySelector('.pag12');
@@ -231,7 +231,6 @@ ant = () => {
     saltarPaginas.innerText = "Saltar a pagina..."
     saltarPaginas2.innerText = "Saltar a pagina..."
   }
-
   volverPaginas.innerText = "volver a pagina " + (pag - 5);
   volverPaginas2.innerText = "volver a pagina " + (pag - 5);
 }
@@ -258,10 +257,8 @@ sig = () => {
     volverPaginas.innerText = "Volver a pagina...";
     volverPaginas2.innerText = "Volver a pagina...";
   }
-
   saltarPaginas.innerText = "Saltar a pagina " + (pag + 5);
   saltarPaginas2.innerText = "Saltar a pagina " + (pag + 5);
-
 }
 
 //Funcion Boton pagina1
@@ -326,8 +323,6 @@ adelantarPaginas = () => {
   anterior2.removeAttribute("hidden");
 }
 
-
-
 //Retrocede 5 paginas
 volPaginas = () => {
   if (pag >= 6) {
@@ -348,7 +343,15 @@ volPaginas = () => {
   siguiente.removeAttribute("hidden");
 }
 
-
+//Funcion para lograr el efecto Smooth en el desplazamiento al inicio
+let anclas = document.querySelectorAll('.ancla');
+anclas.forEach(function(ancla) {
+  ancla.addEventListener('click', function(e) {
+    e.preventDefault();
+    var target = document.querySelector(this.getAttribute('href'));
+    target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
 
 //Cargamos las imagenes en la tabla apenas abrimos la pagina
 window.onload = tabla();

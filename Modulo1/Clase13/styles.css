@@ -3,69 +3,78 @@
     src: url(Fonts/alternative-rick-and-morty-font/get-schwifty.ttf);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
+    font-family: 'Kanit', sans-serif;
 }
-body{
+
+body {
     background-image: url(IMG/wallpapersden.com_rick-in-rick-and-morty_2560x1700.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 70%;
 }
 
-nav{
+nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-left: 40px;
     padding-right: 40px;
-    padding-top: 40px;
+    padding-top: 20px;
     height: 130px;
-    
+
+
 }
-nav>h1 > a{
+
+nav>h1>a {
     font-family: 'rickymorty';
     color: greenyellow;
     font-size: 80px;
     text-decoration: none;
 }
-nav > ul > li > a{
+
+nav>ul>li>a {
     font-family: 'rickymorty';
-    color: white;
-    border: 1px solid white;
+    color: greenyellow;
+    border: 1px solid greenyellow;
     margin: 0 7px;
     padding: 10px 10px;
     border-radius: 10px;
-    font-size: 25px
+    font-size: 25px;
+
 }
 
-nav > ul > li >a:hover {
-    color:green;
+nav>ul>li>a:hover {
+    color: green;
     border-color: green;
 }
 
-table > thead > tr > td{
+table>thead>tr>td {
     text-align: center;
 }
-table > tfoot > tr > td{
+
+table>tfoot>tr>td {
     text-align: center;
 }
-ul > li > a{
+
+ul>li>a {
     text-decoration: none;
 }
 
-ul > li{
+ul>li {
     display: inline-block;
 }
 
-section{
+section {
     margin-left: 50px;
     margin-right: auto;
     margin-top: 100px;
     margin-bottom: auto;
 }
 
-.tarjeta > img{
+.tarjeta>img {
     border: 3px solid green;
     border-radius: 50%;
     margin-top: 10px;
@@ -74,78 +83,111 @@ section{
     margin-bottom: 5px;
 }
 
-.tarjeta > blockquote {
+.tarjeta>blockquote {
     font-size: 17px;
 }
 
-.tarjeta > p{
+.tarjeta>p {
     font-size: 17px;
     margin: 10px 7px;
 }
 
 
-.tarjeta{
+.tarjeta {
     font-family: 'Kanit', sans-serif;
     font-weight: 400;
     border: 1px solid green;
     text-align: center;
     margin: 20px 20px;
     border-radius: 10px;
-    color: white;
+    color: #E8E8E8;
     padding-bottom: 10px;
     padding-left: 5px;
     padding-right: 5px;
     background-image: url(IMG/tarjetaBack.jpeg);
     background-position: center;
     background-size: contain;
-    
-    
-    
 }
 
-#estadoP{
+.tarjeta:hover {
+    transform: translate(-10px, -10px);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+    transition: .5s;
+}
+
+#estadoP {
     position: relative;
 }
 
-#visor{
+#visor {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }
 
-.nroPagina, .nroPagina2{
+.nroPagina,
+.nroPagina2 {
     font-family: "rickymorty";
     color: lightgreen;
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: 100;
 }
 
-.bu{
+.bu {
     font-size: 20px;
-    background: none;
-    color: aquamarine;
+    background-color: #262C3A;
+    color: lightgreen;
     margin: 5px 5px;
-    padding: 5px 5px;
-    
+    padding: 5px 10px;
+    border-radius: 8px;
+    width: auto;
+
 }
-footer{
+
+.bu:hover {
+    color: green;
+    transform: .4s;
+}
+
+footer {
+    margin-top: 6rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-        width: 100%;
-    height: 120px;
+    height: 130px;
+    width: auto;
     text-align: center;
+    color: #E8E8E8;
+
 }
 
+/* 
 .redes{
     display: fixed;
-    justify-content: flex-end;
-}
+    height: 50px;
+} */
 
-.redes > a {
-    margin: 10px;
+
+.redes>a {
+    margin: 20px;
     font-size: 30px;
     color: green;
 }
-footer > p{
-    color: white;
+
+hr {
+    color: #E8E8E8;
 }
+
+.redes>a:hover {
+    font-size: 40px;
+    transition: .6s;
+
+}
+
+.ancla {
+    text-decoration: none;
+    color: #E8E8E8;
+    font-style: italic;
+    font-size: 20px;
+}
+
