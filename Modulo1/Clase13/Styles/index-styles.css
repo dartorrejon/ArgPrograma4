@@ -1,16 +1,17 @@
 @font-face {
     font-family: "rickymorty";
-    src: url(Fonts/alternative-rick-and-morty-font/get-schwifty.ttf);
+    src: url(../Fonts/alternative-rick-and-morty-font/get-schwifty.ttf);
 }
 
 * {
     margin: 0;
     padding: 0;
     font-family: 'Kanit', sans-serif;
+    box-sizing: border-box;
 }
 
 body {
-    background-image: url(IMG/wallpapersden.com_rick-in-rick-and-morty_2560x1700.jpg);
+    background-image: url(../IMG/wallpapersden.com_rick-in-rick-and-morty_2560x1700.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 70%;
@@ -24,8 +25,6 @@ nav {
     padding-right: 40px;
     padding-top: 20px;
     height: 130px;
-
-
 }
 
 nav>h1>a {
@@ -104,7 +103,7 @@ section {
     padding-bottom: 10px;
     padding-left: 5px;
     padding-right: 5px;
-    background-image: url(IMG/tarjetaBack.jpeg);
+    background-image: url(../IMG/tarjetaBack.jpeg);
     background-position: center;
     background-size: contain;
 }
@@ -190,4 +189,3 @@ hr {
     font-style: italic;
     font-size: 20px;
 }
-
