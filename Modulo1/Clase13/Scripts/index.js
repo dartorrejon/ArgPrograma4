@@ -235,8 +235,10 @@ ant = () => {
     saltarPaginas.innerText = "Saltar a pagina..."
     saltarPaginas2.innerText = "Saltar a pagina..."
   }
+  if(pag >5){
   volverPaginas.innerText = "volver a pagina " + (pag - 5);
   volverPaginas2.innerText = "volver a pagina " + (pag - 5);
+}
 }
 
 //Funcion boton siguiente
