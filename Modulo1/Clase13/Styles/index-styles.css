@@ -30,7 +30,7 @@ nav {
 nav>h1>a {
     font-family: 'rickymorty';
     color: greenyellow;
-    font-size: 80px;
+    font-size: 3em;
     text-decoration: none;
 }
 
@@ -41,13 +41,17 @@ nav>ul>li>a {
     margin: 0 7px;
     padding: 10px 10px;
     border-radius: 10px;
-    font-size: 25px;
+    font-size: 1.5rem;
 
 }
 
 nav>ul>li>a:hover {
     color: green;
     border-color: green;
+}
+
+#bot-responsive {
+    display: none;
 }
 
 table>thead>tr>td {
@@ -124,6 +128,7 @@ section {
     transform: translateY(-50%);
 }
 
+.nroPagina0,
 .nroPagina,
 .nroPagina2 {
     font-family: "rickymorty";
@@ -188,4 +193,62 @@ hr {
     color: #E8E8E8;
     font-style: italic;
     font-size: 20px;
+}
+
+
+@media (max-width:576px) {
+    nav {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: #262C3A;
+        padding: 20px;
+    }
+   
+    #personajes>thead,
+    #personajes>tfoot {
+        display: none;
+    }
+
+    #bot-responsive {
+
+        margin-top: 40px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: no-wrap;
+        height: auto;
+    }
+    section{
+        margin-top: 40px;
+    }
+    #bot-responsive>div,
+    #bot-responsive>div>button {
+        color: greenyellow;
+        font-size: 1em;
+        font-style: italic;
+        text-align: center;
+    }
+
+    nav>ul {
+        margin-top: 25px;
+        display: flex;
+        justify-content: space-around;
+        gap: 0 1.5em;
+    }
+
+    nav>h1>a {
+        font-size: 3rem;
+    }
+
+    nav>ul>li>a {
+
+        font-size: 1em;
+    }
+
+    td {
+        display: grid;
+    }
 }

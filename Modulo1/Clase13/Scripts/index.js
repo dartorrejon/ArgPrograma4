@@ -64,10 +64,14 @@ tabla = () => {
     const personajes = Object.values(data.results); //Obtenemos todos los personajes de la pagina
     const titulos = Object.keys(personajes[0]); //Obtenemos las keys para poner los nombres
     const pagActual = (data.info); //Nro de la Pagina actual
+    let pagina0 = document.querySelector('.nroPagina0');
     let pagina = document.querySelector('.nroPagina'); //pagina de parte sup
     let pagina2 = document.querySelector('.nroPagina2');//pagina de parte inf
+    
+    pagina0.innerText = "Pag. "+ pag;
     pagina.innerText = "Pagina N° " + pag;
     pagina2.innerText = "Pagina N° " + pag;
+
 
     let nombre, estado, especie, genero, origen, locacion, foto;
     let cont = 1

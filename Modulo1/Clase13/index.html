@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&display=swap" rel="stylesheet">
-<link rel="icon" href="IMG/rick.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400&display=swap" rel="stylesheet">
+    <link rel="icon" href="IMG/rick.png">
     <title>R&M API-Caracteres</title>
 </head>
 
@@ -21,22 +21,29 @@
             <li><a href="locaciones.html">Locations</a></li>
             <li><a href="episodios.html">Episodes</a></li>
         </ul>
-    </nav>
-
-    <!-- <div>
-        <table>
-
         
-    </table>
-    </div> -->
+              <div id="bot-responsive">
+                                  
+                            <div><button onclick="ant()" class="anterior bu"><<</button>
+                                <button onclick="pagina1()" class="pag1 bu">Pag. 1</button>
+                                <button onclick="volPaginas()" class="volverPags bu"><-5</button>
+                            </div>
+                            <div class="nroPagina0"></div>
+                            <div>
+                                <button onclick="adelantarPaginas()" class="saltarPags bu">5-></button>
+                                <button onclick="paginaFInal()" class="pag42 bu">Pag. 42</button>
+                                <button onclick="sig()" class="siguiente bu">>></button>
+                            </div>
+                              
+              </div> 
+                       
+    </nav>
 
     <section>
         <!-- Personajes -->
-        <table>
+        <table id="personajes">
             <thead>
-                <!-- <tr>
-                    <td colspan="4">Personajes</td>
-                </tr> -->
+                
                 <tr>
                     <td><button onclick="ant()" class="anterior bu" hidden="true">Anterior</button>
                         <button onclick="pagina1()" class="pag1 bu">Pagina 1</button>
@@ -87,34 +94,40 @@
         </table>
     </section>
 
-<br>
-     <!--Footer-->
+    <br>
+    <!--Footer-->
     <footer>
         <div class="redes">
-          
-                <a href="https://es-la.facebook.com/" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-           
-           
-                <a href="https://twitter.com/?lang=es" target="_blank" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
-            
-           
-                <a href="https://ar.linkedin.com/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            
-           
-                <a href="https://github.com/" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-            
+
+            <a href="https://es-la.facebook.com/" target="_blank" title="Facebook"><i
+                    class="fa-brands fa-facebook"></i></a>
+
+
+            <a href="https://twitter.com/?lang=es" target="_blank" title="Twitter"><i
+                    class="fa-brands fa-twitter"></i></a>
+
+
+            <a href="https://ar.linkedin.com/" target="_blank" title="LinkedIn"><i
+                    class="fa-brands fa-linkedin"></i></a>
+
+
+            <a href="https://github.com/" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
+
         </div>
-        
-            <hr>
-        
-        
-        <p><span><a class="ancla" href="#titulo">Volver al Inicio</a></span> - © Darto Inc. Web Develop 2023 - Torrejon Dario Rodrigo - All Rights Reserved.</p>
+
+        <hr>
+
+
+        <p><span><a class="ancla" href="#titulo">Volver al Inicio</a></span> - © Darto Inc. Web Develop 2023 - Torrejon
+            Dario Rodrigo - All Rights Reserved.</p>
     </footer>
 
     <!-- Scripts y Links -->
     <script src="Scripts/index.js"></script>
+    <script src="Scripts/scroll.js"></script>
     <link rel="stylesheet" href="Styles/index-styles.css">
     <script src="https://kit.fontawesome.com/0e141151ad.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
