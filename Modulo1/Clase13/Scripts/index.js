@@ -354,7 +354,7 @@ let anclas = document.querySelectorAll('.ancla');
 anclas.forEach(function(ancla) {
   ancla.addEventListener('click', function(e) {
     e.preventDefault();
-    var target = document.querySelector(this.getAttribute('href'));
+    let target = document.querySelector(this.getAttribute('href'));
     target.scrollIntoView({ behavior: 'smooth' });
   });
 });

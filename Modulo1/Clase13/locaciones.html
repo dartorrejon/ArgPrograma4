@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <link rel="icon" href="IMG/rick.png">
     <title>R&M - Locations</title>
 </head>
+
 <body>
     <nav>
         <h1> <a href="index.html" id="titulo"> Rick & Morty API</a></h1>
@@ -17,11 +19,11 @@
             <li><a href="episodios.html">Episodes</a></li>
         </ul>
 
-        <div id="bot-responsive">
-                                  
-            <div><button onclick="ant()" class="anterior bu"><<</button>
-                <button onclick="pagina1()" class="pag1 bu">Pag. 1</button>
-                <button onclick="volPaginas()" class="volverPags bu"><-5</button>
+        <div id="bot-responsive" hidden>
+            <div><button onclick="ant()" class="anterior bu">
+                    <<< /button>
+                        <button onclick="pagina1()" class="pag1 bu">Pag. 1</button>
+                        <button onclick="volPaginas()" class="volverPags bu"><-5< /button>
             </div>
             <div class="nroPagina0"></div>
             <div>
@@ -29,10 +31,19 @@
                 <button onclick="paginaFInal()" class="pag42 bu">Pag. 42</button>
                 <button onclick="sig()" class="siguiente bu">>></button>
             </div>
-              
-</div> 
+        </div>
     </nav>
+
+    <main>
+        
+      <div class="tarjeta-container">
+
+      </div>
+    </main>
+    
     <link rel="stylesheet" href="Styles/location-styles.css">
+    <script src="Scripts/scroll.js"></script>
     <script src="Scripts/locations.js"></script>
 </body>
+
 </html>

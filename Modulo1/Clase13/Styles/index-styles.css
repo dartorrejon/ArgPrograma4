@@ -188,7 +188,7 @@ hr {
 
 }
 
-.ancla {
+.volver{
     text-decoration: none;
     color: #E8E8E8;
     font-style: italic;
@@ -251,7 +251,7 @@ hr {
     td {
         display: grid;
     }
-    footer > p, .ancla{
+    footer > p, .volver{
         font-size: 12px;
     }
 }
@@ -305,8 +305,10 @@ hr {
     footer{
         height: 110px;
         margin-top: 0;
+        
     }
-    footer > p, .ancla{
+ 
+    footer > p, .volver{
         font-size: 15px;
     
     }
